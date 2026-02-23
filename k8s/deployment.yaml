@@ -29,19 +29,30 @@ spec:
                   name: music-mcp-secrets
                   key: google-api-key
             - name: MINIO_ENDPOINT
-              value: "minio.nblotti.org"
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: MINIO_ENDPOINT
             - name: MINIO_BUCKET
-              value: "music-mcp"
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: MINIO_BUCKET
             - name: MINIO_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
-                  name: music-mcp-secrets
-                  key: minio-access-key
+                  name: minio-credentials
+                  key: MINIO_ACCESS_KEY
             - name: MINIO_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: music-mcp-secrets
-                  key: minio-secret-key
+                  name: minio-credentials
+                  key: MINIO_SECRET_KEY
+            - name: MINIO_SECURE
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: MINIO_SECURE
           livenessProbe:
             httpGet:
               path: /health
