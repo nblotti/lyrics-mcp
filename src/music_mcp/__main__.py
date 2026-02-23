@@ -1,8 +1,8 @@
-"""CLI entry-point for lyrics-mcp.
+"""CLI entry-point for music-mcp.
 
 Usage:
-    lyrics-mcp             — start the MCP server (stdio transport)
-    lyrics-mcp --sse       — start the MCP server (SSE / HTTP transport)
+    music-mcp             — start the MCP server (stdio transport)
+    music-mcp --sse       — start the MCP server (SSE / HTTP transport)
 
 The transport can also be set via the MCP_TRANSPORT environment variable
 (values: "stdio", "sse", "streamable-http").  The --sse flag takes precedence.

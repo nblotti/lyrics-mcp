@@ -1,19 +1,19 @@
 [project]
-name = "lyrics-mcp"
+name = "music-mcp"
 version = "0.1.0"
-description = "MCP server that generates song lyrics from a description using LangChain + Gemini"
+description = "MCP server that generates instrumental music using Google Lyria RealTime"
 requires-python = ">=3.11"
 dependencies = [
     "mcp>=1.6.0",
-    "langchain-google-genai>=2.1.0",
-    "langchain-core>=0.3.0",
+    "google-genai>=1.0.0",
+    "minio>=7.2.0",
 ]
 
 [project.scripts]
-lyrics-mcp = "lyrics_mcp.__main__:main"
+music-mcp = "music_mcp.__main__:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/lyrics_mcp"]
+packages = ["src/music_mcp"]
 
 [build-system]
 requires = ["hatchling"]

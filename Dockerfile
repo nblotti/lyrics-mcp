@@ -13,4 +13,4 @@ ENV MCP_TRANSPORT=sse \
     MCP_HOST=0.0.0.0 \
     MCP_PORT=8000
 
-CMD ["lyrics-mcp"]
+CMD ["music-mcp"]
